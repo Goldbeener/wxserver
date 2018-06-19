@@ -35,7 +35,7 @@ router.get('/wx', async (ctx, next) => {
 })
 
 router.post('/wx', async (ctx, next) => {
-  console.log('获取到的数据------>', 123)
+  console.log('获取到的数据------>', ctx)
   next()
 })
 
