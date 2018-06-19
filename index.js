@@ -40,16 +40,7 @@ router.post('/wx', async (ctx, next) => {
   next()
 })
 
-app.use(bodyParser({
-  enableTypes: [
-    'json',
-    'form',
-    'application/x-www-form-urlencoded'
-  ],
-  extendTypes: {
-    json: ['applocation/x-javascript']
-  }
-}))
+app.use(bodyParser())
 app.use(router.routes())
 
 app.listen(80)
