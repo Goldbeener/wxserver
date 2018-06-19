@@ -16,8 +16,9 @@ router.all('/wx', async (ctx, next) => {
   }
 })
 
-app.use(bodyParser())
+app
   .use(xmlParser())
+  .use(bodyParser())
   .use(router.routes())
 
 app.listen(80)
