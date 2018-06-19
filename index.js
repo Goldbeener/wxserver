@@ -2,6 +2,7 @@ const koa = require('koa')
 const router = require('koa-router')()
 const bodyParser = require('koa-bodyparser')
 const xmlParser = require('koa-xml-body')
+const getRawBody = require('raw-body')
 
 const vertufy = require('./modules/vertifyServer.js')
 
@@ -11,7 +12,8 @@ router.all('/wx', async (ctx, next) => {
   if(ctx.request.method == 'GET'){
     vertufy(ctx, next)
   }else{
-    console.log('获取到的数据------>', ctx.request)
+    const xml = getRawBody(ctx.req)
+    console.log('获取到的数据------>', xml)
     ctx.body = 'success'
   }
 })
