@@ -1,6 +1,7 @@
 const koa = require('koa')
 const router = require('koa-router')()
 const crypto = require('crypto')
+const bodyParser = require('koa-bodyparser')
 
 function sha1(str) {
   let md5sum = crypto.createHash('sha1')
@@ -39,6 +40,7 @@ router.post('/wx', async (ctx, next) => {
   next()
 })
 
+app.use(bodyParser())
 app.use(router.routes())
 
 app.listen(80)
