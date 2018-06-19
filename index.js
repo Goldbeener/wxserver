@@ -5,7 +5,7 @@ const crypto = require('crypto')
 function sha1(str) {
   let md5sum = crypto.createHash('sha1')
   md5sum.update(str)
-  str = md5sum.disgest('hex')
+  str = md5sum.digest('hex')
   return str
 }
 
