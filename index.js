@@ -11,7 +11,8 @@ router.all('/wx', async (ctx, next) => {
   if(ctx.request.method == 'GET'){
     vertufy(ctx, next)
   }else{
-    console.log('获取到的数据------>', ctx.request.body)
+    console.log('获取到的数据------>', ctx.request)
+    ctx.body = 'success'
   }
 })
 
