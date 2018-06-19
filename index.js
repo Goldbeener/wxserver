@@ -12,7 +12,6 @@ function sha1(str) {
 const app = new koa()
 
 router.get('/wx', async (ctx, next) => {
-  // ctx.url = '/wx?signature=47db7526a702df8d5158190139d803fba98c69e8&echostr=14081195149111064895&timestamp=1529047097&nonce=2846552087'
   console.log('ctx query---->', ctx.query)
   let param = ctx.query
   let {signature, timestamp, nonce, echostr } = param
@@ -35,8 +34,8 @@ router.get('/wx', async (ctx, next) => {
   }
 })
 
-router.get('/', async (ctx, next) => {
-  ctx.response.body = '<h1>wx server</h1>'
+router.post('/', async (ctx, next) => {
+  console.log('获取到的数据------>', ctx.request)
 })
 
 app.use(router.routes())
