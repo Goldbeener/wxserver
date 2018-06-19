@@ -32,10 +32,12 @@ router.get('/wx', async (ctx, next) => {
   }else{
     ctx.response.body = 'valid false'
   }
+  next()
 })
 
 router.post('/wx', async (ctx, next) => {
-  console.log('获取到的数据------>', ctx.request)
+  console.log('获取到的数据------>', 123)
+  next()
 })
 
 app.use(router.routes())
