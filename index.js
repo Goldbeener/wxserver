@@ -11,6 +11,7 @@ function sha1(str) {
 }
 
 const app = new koa()
+app.use(bodyParser())
 
 router.get('/wx', async (ctx, next) => {
   console.log('ctx query---->', ctx.query)
@@ -40,7 +41,6 @@ router.post('/wx', async (ctx, next) => {
   next()
 })
 
-app.use(bodyParser())
 app.use(router.routes())
 
 app.listen(80)
