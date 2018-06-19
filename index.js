@@ -19,7 +19,7 @@ router.all("/wx", async (ctx, next) => {
     let fromUser = xmlData.FromUserName[0];
     let CreateTime = xmlData.CreateTime[0];
     let MsgType = xmlData.MsgType[0];
-    let Content = xmlData.content[0];
+    let Content = xmlData.Content[0];
     let MsgId = xmlData.MsgId[0] + 1;
 
     let sendTime = + new Date()
