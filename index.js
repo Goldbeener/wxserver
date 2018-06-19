@@ -9,7 +9,7 @@ const app = new koa()
 
 router.all('/wx', async (ctx, next) => {
   if(ctx.request.method == 'GET'){
-    vertufy()
+    vertufy(ctx, next)
   }else{
     console.log('获取到的数据------>', ctx.request.body)
   }
