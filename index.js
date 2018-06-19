@@ -20,9 +20,9 @@ router.all("/wx", async (ctx, next) => {
     let CreateTime = xmlData.CreateTime[0];
     let MsgType = xmlData.MsgType[0];
     let Content = xmlData.Content[0];
-    let MsgId = xmlData.MsgId[0] + 1;
+    let MsgId = xmlData.MsgId[0] - 1;
 
-    let sendTime = + new Date()
+    let sendTime = new Date().getTime()
     let response = '你说的是' + Content + '吗?'
     let xml = `
     <xml>  
