@@ -36,12 +36,13 @@ router.all('/wx', async (ctx, next) => {
       ctx.response.body = 'valid false'
     }
   }else{
-    console.log('获取到的数据------>', ctx.request)
+    console.log('获取到的数据------>', ctx.request.body)
   }
 })
 
-app.use(xmlParser())
-app.use(router.routes())
+app.use(bodyParser())
+  .use(xmlParser())
+  .use(router.routes())
 
 app.listen(80)
 console.log('server is listening 80')
