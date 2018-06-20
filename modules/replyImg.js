@@ -12,11 +12,13 @@ module.exports = (ctx, xmlData) => {
       <ToUserName><![CDATA[${fromUser}]]></ToUserName>  
       <FromUserName><![CDATA[${me}]]></FromUserName>  
       <CreateTime>${sendTime}</CreateTime>  
-      <MsgType><![CDATA[text]]></MsgType>
+      <MsgType><![CDATA[image]]></MsgType>
       <MsgId>${MsgId}</MsgId>
       <PicUrl><![CDATA[${PicUrl}]]></PicUrl>
       <MediaId><![CDATA[${MediaId}]]></MediaId>
     </xml>
     `
+
+    
   ctx.body = xml
 }
