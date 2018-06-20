@@ -14,7 +14,7 @@ function getToken () {
   })
   .then(res => {
     console.log('success', res.data)
-    fs.writeFile('./token.json', res.data.toString(), function (err) {
+    fs.writeFile('./token.json', JSON.stringify(res.data), function (err) {
       if (err) {
         console.log('token写入文件失败')
         return 
