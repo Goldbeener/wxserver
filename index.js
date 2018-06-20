@@ -28,7 +28,7 @@ app.use(xmlParser()).use(router.routes());
 
 getToken()
   .then(res => {
-    console.log('success', res)
+    console.log('success', res.data)
   })
   .catch(err => {
     console.log('error', err)
