@@ -25,16 +25,16 @@ router.all("/wx", async (ctx, next) => {
     let sendTime = new Date().getTime()
     let response = '你说的是' + Content + '吗?'
     let xml = `
-    <xml>  
-      <ToUserName>< ![CDATA[${fromUser}]]></ToUserName>  
-      <FromUserName>< ![CDATA[${me}]]></FromUserName>  
-      <CreateTime>${sendTime}</CreateTime>  
-      <MsgType>< ![CDATA[text]]></MsgType>  
-      <Content>< ![CDATA[${response}]]></Content>  
-      <MsgId>${MsgId}</MsgId>
-    </xml>
-    `;
-    ctx.response.type = 'text/xml'
+      <xml>  
+        <ToUserName>< ![CDATA[${fromUser}]]></ToUserName>  
+        <FromUserName>< ![CDATA[${me}]]></FromUserName>  
+        <CreateTime>${sendTime}</CreateTime>  
+        <MsgType>< ![CDATA[text]]></MsgType>  
+        <Content>< ![CDATA[${response}]]></Content>  
+        <MsgId>${MsgId}</MsgId>
+      </xml>
+      `
+    ctx.response.type = 'application/xml'
     ctx.body = xml;
   }
 });
