@@ -11,8 +11,8 @@ router.all("/wx", async (ctx, next) => {
   if (ctx.request.method == "GET") {
     vertufy(ctx, next);
   } else if (ctx.request.method == "POST") {
-    // let xmlData = ctx.request.body.xml;
-    // console.log("获取到的数据------>", JSON.stringify(xmlData, null, 2));
+    let xmlData = ctx.request.body.xml;
+    console.log("获取到的数据------>", JSON.stringify(xmlData, null, 2));
 
 
     // let me = xmlData.ToUserName[0];
