@@ -6,7 +6,7 @@ module.exports = (token) => {
   axios.post(url, {
     params: {
       access_token: token,
-      data: menu
-    }
+    },
+    data: menu
   })
 }
