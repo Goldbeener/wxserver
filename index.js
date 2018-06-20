@@ -7,6 +7,8 @@ const vertify = require("./modules/vertifyServer.js");
 const replyText = require('./modules/replyText.js')
 const replyImg = require('./modules/replyImg.js')
 
+const getToken = require('./modules/getAccessToken')
+
 const app = new koa();
 
 router.all("/wx", async (ctx, next) => {
@@ -23,6 +25,14 @@ router.all("/wx", async (ctx, next) => {
 });
 
 app.use(xmlParser()).use(router.routes());
+
+getToken()
+  .then(res => {
+    console.log('success', res)
+  })
+  .catch(err => {
+    console.log('error', err)
+  })
 
 app.listen(80);
 console.log("server is listening 80");
