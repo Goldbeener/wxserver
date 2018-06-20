@@ -1,7 +1,9 @@
 const axios = require('axios')
 const url = 'https://api.weixin.qq.com/cgi-bin/menu/create'
+const token = require('../token.json').access_token
 const menu = require('../config').menu
 
+function createMenu () {
   axios({
     url,
     method: 'POST',
@@ -16,3 +18,6 @@ const menu = require('../config').menu
   .catch(err => {
     console.log('error', err)
   })
+}
+
+createMenu()
