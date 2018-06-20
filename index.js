@@ -34,7 +34,7 @@ router.all("/wx", async (ctx, next) => {
       <MsgId>${MsgId}</MsgId>
     </xml>
     `;
-
+    ctx.response.type = 'text/xml'
     ctx.body = xml;
   }
 });
