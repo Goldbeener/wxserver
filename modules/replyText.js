@@ -1,5 +1,5 @@
 
-module.exports = (xmlData) => {
+module.exports = (ctx, xmlData) => {
   
   let me = xmlData.ToUserName[0];
   let fromUser = xmlData.FromUserName[0];

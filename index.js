@@ -16,8 +16,8 @@ router.all("/wx", async (ctx, next) => {
     console.log("获取到的数据------>", JSON.stringify(xmlData, null, 2));
     let MsgType = xmlData.MsgType[0];
 
-    if (MsgType == 'text') replyText(xmlData)
-    if (MsgType == 'image') replyImg(xmlData)
+    if (MsgType == 'text') replyText(ctx, xmlData)
+    if (MsgType == 'image') replyImg(ctx, xmlData)
   }
 });
 
