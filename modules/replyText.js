@@ -25,5 +25,6 @@ module.exports = (ctx, xmlData) => {
       <MsgId>${MsgId}</MsgId>
     </xml>
     `
-  ctx.body = xml
+  // ctx.body = xml
+  ctx.body = 'success'
 }
