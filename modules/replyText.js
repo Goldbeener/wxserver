@@ -1,5 +1,5 @@
 const jieba = require('nodejieba')
-const topN = 4
+const topN = 1
 
 module.exports = (ctx, xmlData) => {
   
