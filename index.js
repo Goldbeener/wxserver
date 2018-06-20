@@ -5,6 +5,7 @@ const xmlParser = require("koa-xml-body");
 
 const vertify = require("./modules/vertifyServer.js");
 const replyText = require('./modules/replyText.js')
+const replyImg = require('./modules/replyImg.js')
 
 const app = new koa();
 
