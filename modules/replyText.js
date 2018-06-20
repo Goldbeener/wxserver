@@ -1,4 +1,5 @@
 const jieba = require('nodejieba')
+const topN = 4
 
 module.exports = (ctx, xmlData) => {
   
@@ -11,7 +12,7 @@ module.exports = (ctx, xmlData) => {
   let sendTime = new Date().getTime()
   let response = '你说的是' + Content + '吗?'
 
-  const ask = jieba.cut(Content)
+  const ask = jieba.extract(Content, topN)
   console.log('接收到的---->', ask)
 
   let xml = `
