@@ -8,7 +8,7 @@ module.exports = () => {
     params: {
       grant_type: 'client_credential',
       appid: config.appid,
-      secret: appsecret
+      secret: config.appsecret
     }
   })
 }
